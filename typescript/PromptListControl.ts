@@ -105,8 +105,8 @@ namespace ForgeCouple {
                     <button class="${WebUI.buttonClasses}">❌</button>
                 </td>
             `;
-            let colorCell: HTMLTableCellElement | null    = rowElem.querySelector(`.${PromptListControl.classNames.colorCell}`);
-            let colorElem: HTMLDivElement | null          = rowElem.querySelector(`.${PromptListControl.classNames.colorMarker}`);
+            let colorCell: HTMLTableCellElement | null     = rowElem.querySelector(`.${PromptListControl.classNames.colorCell}`);
+            let colorElem: HTMLDivElement | null           = rowElem.querySelector(`.${PromptListControl.classNames.colorMarker}`);
             let promptElem: HTMLInputElement | null        = rowElem.querySelector(`.${PromptListControl.classNames.promptCell} input`);
             let weightElem: HTMLInputElement | null        = rowElem.querySelector(`.${PromptListControl.classNames.weightCell} input`);
             let deleteButtonElem: HTMLButtonElement | null = rowElem.querySelector(`.${PromptListControl.classNames.deleteCell} button`);
@@ -119,8 +119,8 @@ namespace ForgeCouple {
 
             colorCell.addEventListener('click', _ => this.onMarkerClicked(row));
             promptElem.addEventListener('focus', _ => this.onPromptFocused(row));
-            promptElem.addEventListener('change', _ => this.onPromptUpdated(row));
-            weightElem.addEventListener('change', _ => this.onWeightUpdated(row));
+            promptElem.addEventListener('input', _ => this.onPromptUpdated(row));
+            weightElem.addEventListener('input', _ => this.onWeightUpdated(row));
             deleteButtonElem.addEventListener('click', _ => this.onDeleteClicked(row));
             
             this.tableElem.appendChild(rowElem);
