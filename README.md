@@ -132,10 +132,13 @@ LoRA with multiple subjects works better in my experience.
 ## Advanced Mapping
 
 If the above simple regions aren't enough, you can switch to the Advanced mode and define regions manually.
-The UI is quite straightforward: click *Add region*, fill in the prompt, adjust the weight if required,
-and move/resize the box in the canvas below.
+Simple click *Add region*, fill in the prompt, adjust the weight if required, and move/resize the box in
+the canvas below.
 
-You can also type a background prompt in WebUI's main prompt textbox, but this is not required. The example below uses the background prompt `a cinematic photo of a couple, from side, outdoors`.
+If a box gets hidden behind another, you can click its prompt textbox to bring it to the front.
+
+You can also type a background prompt in WebUI's main prompt textbox, but this is not required.
+The example below uses the background prompt `a cinematic photo of a couple, from side, outdoors`.
 
 <p align="center">
 <img src="example/10.jpg" height=384>
