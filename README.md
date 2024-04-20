@@ -132,7 +132,7 @@ LoRA with multiple subjects works better in my experience.
 ## Advanced Mapping
 
 If the above simple regions aren't enough, you can switch to the Advanced mode and define regions manually.
-Simple click *Add region*, fill in the prompt, adjust the weight if required, and move/resize the box in
+Simply click *Add region*, fill in the prompt, adjust the weight if required, and move/resize the box in
 the canvas below.
 
 If a box gets hidden behind another, you can click its prompt textbox to bring it to the front.
