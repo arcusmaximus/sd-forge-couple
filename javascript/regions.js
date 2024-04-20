@@ -545,7 +545,7 @@ var ForgeCouple;
                 </td>
                 <td class="${PromptListControl.classNames.weightCell}">
                     <label class="${ForgeCouple.WebUI.inputClasses} container">
-                        <input class="${ForgeCouple.WebUI.inputClasses}" placeholder="Weight"/>
+                        <input class="${ForgeCouple.WebUI.inputClasses}" min="0" step="0.1" title="Weight" />
                     </label>
                 </td>
                 <td class="${PromptListControl.classNames.deleteCell}">
@@ -562,6 +562,8 @@ var ForgeCouple;
             }
             let row = { region, rowElem, colorElem, promptElem, weightElem, deleteButtonElem };
             this.updateTableRow(row);
+            rowElem.addEventListener('mouseenter', _ => this.onRowMouseEnter(row));
+            rowElem.addEventListener('mouseleave', _ => this.onRowMouseLeave(row));
             colorCell.addEventListener('click', _ => this.onMarkerClicked(row));
             promptElem.addEventListener('focus', _ => this.onPromptFocused(row));
             promptElem.addEventListener('input', _ => this.onPromptUpdated(row));
@@ -578,6 +580,12 @@ var ForgeCouple;
         }
         updateAddButton() {
             this.addButtonElem.disabled = this.rows.length >= this.maxRegions;
+        }
+        onRowMouseEnter(row) {
+            row.weightElem.type = 'number';
+        }
+        onRowMouseLeave(row) {
+            row.weightElem.type = 'text';
         }
         onMarkerClicked(row) {
             row.region.enabled = !row.region.enabled;
