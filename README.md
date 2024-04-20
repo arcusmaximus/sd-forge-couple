@@ -130,65 +130,22 @@ LoRA with multiple subjects works better in my experience.
 ```
 
 ## Advanced Mapping
-Were these automated equally-sized tiles not sufficient for your needs? Now you can manually specify each regions! The mapping logic is the same: one line corresponds to one entry.
 
-- **Note:**
-    - You **must** have values in the entire mask. Simplest way would be adding a global entry by clicking `New First Row`
-    - Entries with empty **x** column are skipped
+If the above simple regions aren't enough, you can switch to the Advanced mode and define regions manually.
+The UI is quite straightforward: click *Add region*, fill in the prompt, adjust the weight if required,
+and move/resize the box in the canvas below.
 
-- **Regions:**
-    - Each region contains a (**x**, **y**) range and a **weight**
-    - The **x** and **y** are in the syntax of `from : to`
-    - **x** is from left to right; **y** is from top to bottom
-    - The values should be `0.0 ~ 1.0`, representing the **percentage** of the full width/height
-        - **eg.** `0.0:1.0` would span across the entire axis
-
-- **Click & Drag:**
-    Tired of ~~painstakingly~~ specifying the ranges? Just use the mouse to draw the regions!
-    - Click the button to get started *(cursor will become a **crosshair** when hovering the preview image)*
-    - Make a selection on top of the preview image with the mouse
-
-- **Selected Row:**
-    - The index of the entry to be edited by `Click & Drag`; or to be deleted
-    - Use an index out of range to append a new entry instead
-    - The index follows the Python logic *(**ie.** Start from `0`; negative counts from the last entry)*
-    - Clicking a row will update the index
-
-- **Preview:**
-    - Click the **Preview Mapping** button to see each region
-    - Colors are mapped in the sequence of a rainbow; corresponding row is also colored
+You can also type a background prompt in WebUI's main prompt textbox, but this is not required. The example below uses the background prompt `a cinematic photo of a couple, from side, outdoors`.
 
 <p align="center">
 <img src="example/10.jpg" height=384>
-<img src="example/10s.jpg" height=384>
+<img src="example/10s.png" height=384>
 </p>
 
-```
-a cinematic photo of a couple, from side, outdoors
-couple photo, man, black tuxedo
-couple photo, woman, white dress
-wedding photo, holding flower bouquet together
-sunset, golden hour, lens flare
-```
-
-<hr>
-
-## TypeError: 'NoneType'
-
-For people that get the following error:
-```py
-RuntimeError: shape '[X, Y, 1]' is invalid for input of size Z
-shape '[X, Y, 1]' is invalid for input of size Z
-*** Error completing request
-    ...
-    Traceback (most recent call last):
-        ...
-        res = list(func(*args, **kwargs))
-    TypeError: 'NoneType' object is not iterable
-```
-
-1. Go to **Settings** -> **Optimizations**, and enable `Pad prompt/negative prompt`
-2. Set the `Width` and `Height` to multiple of **64**
+Other features:
+- You can click the colored disc to the left of each prompt textbox to temporarily disable the region.
+- You can load a background image into the canvas by clicking the 📂 button or drag&dropping a file onto it.
+- On the img2img tab, you can load the current input image as a background by clicking the 🖼️ button.
 
 <hr>
 
