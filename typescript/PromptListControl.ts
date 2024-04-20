@@ -87,7 +87,7 @@ namespace ForgeCouple {
         private addGridRow(region: Region): TableRow {
             let rowElem = document.createElement('tr');
             rowElem.innerHTML = `
-                <td class="${PromptListControl.classNames.colorCell}">
+                <td class="${PromptListControl.classNames.colorCell}" title="Enable/disable">
                     <div class="${PromptListControl.classNames.colorMarker}">
                     </div>
                 </td>
