@@ -48,7 +48,7 @@ namespace ForgeCouple {
 
                 let newSubject = new Subject<ImageSize>();
                 for (let input of Object.values(inputs)) {
-                    input.addEventListener('change', () => WebUI.onOutputImageSizeChanged(forImg2img));
+                    input.addEventListener('input', () => WebUI.onOutputImageSizeChanged(forImg2img));
                 }
 
                 if (forImg2img) {
